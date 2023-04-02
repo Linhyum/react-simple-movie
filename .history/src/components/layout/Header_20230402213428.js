@@ -38,7 +38,6 @@ const Header = () => {
                     } `}
                     onClick={() => {
                         setDark(!dark);
-                        setValue(!dark);
                     }}
                 >
                     <div

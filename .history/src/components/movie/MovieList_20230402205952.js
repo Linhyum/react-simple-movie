@@ -3,7 +3,7 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/scss";
 import useSWR from "swr";
 import { fetcher, getMovieList } from "../../config";
-import MovieCard, { MovieCardSkeleton } from "./MovieCard";
+import MovieCard from "./MovieCard";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
 SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -48,14 +48,7 @@ const MovieList = ({ type }) => {
                     },
                 }}
             >
-                {isLoading && (
-                    <div className="grid grid-cols-4 gap-x-8">
-                        <MovieCardSkeleton></MovieCardSkeleton>
-                        <MovieCardSkeleton></MovieCardSkeleton>
-                        <MovieCardSkeleton></MovieCardSkeleton>
-                        <MovieCardSkeleton></MovieCardSkeleton>
-                    </div>
-                )}
+                {isLoading && <div className="grid grid-cols-4 gap-x-8"> </div>}
                 {!isLoading &&
                     movies.length > 0 &&
                     movies.map((item) => (

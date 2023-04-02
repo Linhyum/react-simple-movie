@@ -48,11 +48,8 @@ const MovieList = ({ type }) => {
                     },
                 }}
             >
-                {isLoading && (
+                {!isLoading && (
                     <div className="grid grid-cols-4 gap-x-8">
-                        <MovieCardSkeleton></MovieCardSkeleton>
-                        <MovieCardSkeleton></MovieCardSkeleton>
-                        <MovieCardSkeleton></MovieCardSkeleton>
                         <MovieCardSkeleton></MovieCardSkeleton>
                     </div>
                 )}

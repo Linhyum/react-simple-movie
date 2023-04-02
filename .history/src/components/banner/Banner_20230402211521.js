@@ -6,6 +6,7 @@ import { fetcher, getImg, getMovieList } from "../../config";
 import { useNavigate } from "react-router-dom";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
+import { MovieCardSkeleton } from "../movie/MovieCard";
 import LoadingSkeleton from "../LoadingSkeleton";
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 const Banner = () => {
@@ -19,12 +20,11 @@ const Banner = () => {
                 pagination={{ clickable: true }}
                 slidesPerView={1}
             >
-                {/* {!isLoading && (
+                {!isLoading && (
                     <div className="w-full h-full">
-                        <LoadingSkeleton height="100%"></LoadingSkeleton>
+                        <LoadingSkeleton></LoadingSkeleton>
                     </div>
-                )} */}
-
+                )}
                 {!isLoading &&
                     banners.length > 0 &&
                     banners.map((item) => (

@@ -36,10 +36,7 @@ const Header = () => {
                     className={`relative transition-all duration-300 w-20 h-9 flex items-center cursor-pointer rounded-full ${
                         dark ? "bg-primary" : "bg-slate-400"
                     } `}
-                    onClick={() => {
-                        setDark(!dark);
-                        setValue(!dark);
-                    }}
+                    onClick={() => setDark(!dark)}
                 >
                     <div
                         className={`absolute flex items-center justify-center transition-all duration-300 w-8 h-8 rounded-full  ${

@@ -3,7 +3,7 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/scss";
 import useSWR from "swr";
 import { fetcher, getMovieList } from "../../config";
-import MovieCard, { MovieCardSkeleton } from "./MovieCard";
+import MovieCard from "./MovieCard";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
 SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -12,7 +12,7 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 //https://api.themoviedb.org/3/movie/top_rated?api_key=<<api_key>>
 let slidesPerView = 0;
 const MovieList = ({ type }) => {
-    const { data, isLoading } = useSWR(getMovieList(type), fetcher);
+    const { data } = useSWR(getMovieList(type), fetcher);
     const movies = data?.results || [];
     return (
         <div className="movie-list">
@@ -48,16 +48,7 @@ const MovieList = ({ type }) => {
                     },
                 }}
             >
-                {isLoading && (
-                    <div className="grid grid-cols-4 gap-x-8">
-                        <MovieCardSkeleton></MovieCardSkeleton>
-                        <MovieCardSkeleton></MovieCardSkeleton>
-                        <MovieCardSkeleton></MovieCardSkeleton>
-                        <MovieCardSkeleton></MovieCardSkeleton>
-                    </div>
-                )}
-                {!isLoading &&
-                    movies.length > 0 &&
+                {movies.length > 0 &&
                     movies.map((item) => (
                         <SwiperSlide key={item.id}>
                             <MovieCard info={item}></MovieCard>

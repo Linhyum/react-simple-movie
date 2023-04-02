@@ -48,7 +48,7 @@ const MovieList = ({ type }) => {
                     },
                 }}
             >
-                {isLoading && (
+                {!isLoading && (
                     <div className="grid grid-cols-4 gap-x-8">
                         <MovieCardSkeleton></MovieCardSkeleton>
                         <MovieCardSkeleton></MovieCardSkeleton>
@@ -56,7 +56,13 @@ const MovieList = ({ type }) => {
                         <MovieCardSkeleton></MovieCardSkeleton>
                     </div>
                 )}
-                {!isLoading &&
+                <div className="grid grid-cols-4 gap-x-8">
+                    <MovieCardSkeleton></MovieCardSkeleton>
+                    <MovieCardSkeleton></MovieCardSkeleton>
+                    <MovieCardSkeleton></MovieCardSkeleton>
+                    <MovieCardSkeleton></MovieCardSkeleton>
+                </div>
+                {isLoading &&
                     movies.length > 0 &&
                     movies.map((item) => (
                         <SwiperSlide key={item.id}>

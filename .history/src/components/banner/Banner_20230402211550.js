@@ -19,19 +19,18 @@ const Banner = () => {
                 pagination={{ clickable: true }}
                 slidesPerView={1}
             >
-                {/* {!isLoading && (
+                {!isLoading && (
                     <div className="w-full h-full">
                         <LoadingSkeleton height="100%"></LoadingSkeleton>
                     </div>
-                )} */}
-
-                {!isLoading &&
+                )}
+                {/* {!isLoading &&
                     banners.length > 0 &&
                     banners.map((item) => (
                         <SwiperSlide key={item.id}>
                             <BannerItem info={item}></BannerItem>
                         </SwiperSlide>
-                    ))}
+                    ))} */}
                 <div className="swiper-button-prev"></div>
                 <div className="swiper-button-next"></div>
             </Swiper>

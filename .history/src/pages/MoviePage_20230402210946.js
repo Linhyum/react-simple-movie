@@ -61,7 +61,7 @@ const MoviePage = () => {
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
-            {isLoading && (
+            {!isLoading && (
                 <div className="grid grid-cols-4 gap-x-8">
                     <MovieCardSkeleton></MovieCardSkeleton>
                     <MovieCardSkeleton></MovieCardSkeleton>

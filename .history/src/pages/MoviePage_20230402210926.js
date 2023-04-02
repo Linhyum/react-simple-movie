@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import useSWR from "swr";
-import MovieCard, { MovieCardSkeleton } from "../components/movie/MovieCard";
+import MovieCard from "../components/movie/MovieCard";
 import { fetcher, getMovieList } from "../config";
 import ReactPaginate from "react-paginate";
 const itemsPerPage = 20;

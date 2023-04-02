@@ -19,12 +19,11 @@ const Banner = () => {
                 pagination={{ clickable: true }}
                 slidesPerView={1}
             >
-                {/* {!isLoading && (
+                {!isLoading && (
                     <div className="w-full h-full">
                         <LoadingSkeleton height="100%"></LoadingSkeleton>
                     </div>
-                )} */}
-
+                )}
                 {!isLoading &&
                     banners.length > 0 &&
                     banners.map((item) => (

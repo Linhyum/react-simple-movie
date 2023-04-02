@@ -43,18 +43,16 @@ export function MovieCardSkeleton() {
     return (
         <div className="movie-card text-white hover:shadow-lg hover:shadow-primary transition-all duration-300 rounded-lg p-3 bg-slate-800 select-none">
             <LoadingSkeleton height="300px" radius="8px"></LoadingSkeleton>
-            <div className="my-6">
-                <LoadingSkeleton height="30px" radius="8px"></LoadingSkeleton>
-            </div>
-            <div className="flex items-center justify-between text-sm mt-6 mb-6">
+            <div className="flex items-center justify-between text-sm mt-8  mb-7">
                 <LoadingSkeleton height="30px" width="60px" radius="8px"></LoadingSkeleton>
+
                 <div className="flex items-center gap-x-2">
                     <LoadingSkeleton height="30px" width="60px" radius="8px"></LoadingSkeleton>
                 </div>
             </div>
-            <div className="py-3 text-white flex items-center justify-center gap-x-3 rounded-lg w-full text-xl font-bold">
-                <LoadingSkeleton height="60px" radius="8px"></LoadingSkeleton>
-            </div>
+            <button className="py-3 text-white flex items-center justify-center gap-x-3 bg-primary rounded-lg w-full text-xl font-bold hover:opacity-90">
+                <LoadingSkeleton height="30px" width="60px" radius="8px"></LoadingSkeleton>
+            </button>
         </div>
     );
 }

@@ -40,21 +40,17 @@ export default withErrorBoundary(MovieCard, {
 });
 
 export function MovieCardSkeleton() {
-    return (
-        <div className="movie-card text-white hover:shadow-lg hover:shadow-primary transition-all duration-300 rounded-lg p-3 bg-slate-800 select-none">
-            <LoadingSkeleton height="300px" radius="8px"></LoadingSkeleton>
-            <div className="my-6">
-                <LoadingSkeleton height="30px" radius="8px"></LoadingSkeleton>
-            </div>
-            <div className="flex items-center justify-between text-sm mt-6 mb-6">
-                <LoadingSkeleton height="30px" width="60px" radius="8px"></LoadingSkeleton>
-                <div className="flex items-center gap-x-2">
-                    <LoadingSkeleton height="30px" width="60px" radius="8px"></LoadingSkeleton>
+    <div className="movie-card text-white hover:shadow-lg hover:shadow-primary transition-all duration-300 rounded-lg p-3 bg-slate-800 select-none">
+        <LoadingSkeleton height="300px" radius="8px"></LoadingSkeleton>
+        <div className="flex items-center justify-between text-sm  mb-7">
+            <span className="opacity-50"></span>
+            <div className="flex items-center gap-x-2">
+                <span className="opacity-50"></span>
+                <div className="text-yellow-400">
+                    <i class="fa-solid fa-star"></i>
                 </div>
             </div>
-            <div className="py-3 text-white flex items-center justify-center gap-x-3 rounded-lg w-full text-xl font-bold">
-                <LoadingSkeleton height="60px" radius="8px"></LoadingSkeleton>
-            </div>
         </div>
-    );
+        <Button></Button>
+    </div>;
 }

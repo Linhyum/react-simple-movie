@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import useLocalStorage from "../../hooks/useLocalStorage";
 
 const Header = () => {
-    const { storedValue, setValue } = useLocalStorage("dark", false);
-
-    const [dark, setDark] = useState(storedValue);
+    const [dark, setDark] = useState(false);
     const active = ({ isActive }) => isActive && "text-primary";
     const handleClick = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -36,10 +33,7 @@ const Header = () => {
                     className={`relative transition-all duration-300 w-20 h-9 flex items-center cursor-pointer rounded-full ${
                         dark ? "bg-primary" : "bg-slate-400"
                     } `}
-                    onClick={() => {
-                        setDark(!dark);
-                        setValue(!dark);
-                    }}
+                    onClick={() => setDark(!dark)}
                 >
                     <div
                         className={`absolute flex items-center justify-center transition-all duration-300 w-8 h-8 rounded-full  ${
