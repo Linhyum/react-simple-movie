@@ -26,12 +26,12 @@ const Header = () => {
                 </NavLink>
             </header>
             <button
-                className="fixed z-50 bottom-8 right-8  w-12 h-12 rounded-full bg-primary text-2xl"
+                className="fixed z-50 bottom-20 right-5  w-12 h-12 rounded-full bg-primary text-2xl"
                 onClick={handleClick}
             >
                 <i class="fa-solid fa-house"></i>
             </button>
-            <div className="fixed top-3 right-3 z-50">
+            <div className="fixed bottom-20 left-5 z-50">
                 <div
                     className={`relative transition-all duration-300 w-20 h-9 flex items-center cursor-pointer rounded-full ${
                         dark ? "bg-primary" : "bg-slate-400"

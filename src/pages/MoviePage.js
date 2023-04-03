@@ -3,6 +3,7 @@ import useSWR from "swr";
 import MovieCard, { MovieCardSkeleton } from "../components/movie/MovieCard";
 import { fetcher, getMovieList } from "../config";
 import ReactPaginate from "react-paginate";
+import { v4 } from "uuid";
 const itemsPerPage = 20;
 const MoviePage = () => {
     const [nextPage, setNextPage] = useState(1);
@@ -63,17 +64,17 @@ const MoviePage = () => {
             </form>
             {isLoading && (
                 <div className="grid grid-cols-4 gap-x-8">
-                    <MovieCardSkeleton></MovieCardSkeleton>
-                    <MovieCardSkeleton></MovieCardSkeleton>
-                    <MovieCardSkeleton></MovieCardSkeleton>
-                    <MovieCardSkeleton></MovieCardSkeleton>
+                    {new Array(itemsPerPage).fill(0).map(() => (
+                        <MovieCardSkeleton key={v4()}></MovieCardSkeleton>
+                    ))}
                 </div>
             )}
-            <div className="moive-page grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-[30px] mb-20">
-                {!isLoading &&
-                    movies.length > 0 &&
-                    movies.map((item) => <MovieCard key={item.id} info={item}></MovieCard>)}
-            </div>
+            {!isLoading && (
+                <div className="moive-page grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-[30px] mb-20">
+                    {movies.length > 0 &&
+                        movies.map((item) => <MovieCard key={item.id} info={item}></MovieCard>)}
+                </div>
+            )}
             <div className="my-10">
                 <ReactPaginate
                     pageCount={pageCount} // Tổng số trang

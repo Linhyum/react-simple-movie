@@ -9,7 +9,7 @@
     }
 
     body {
-        @apply bg-white text-slate-900;
+        @apply bg-white text-slate-900 px-5 font-body;
         transition: all linear 0.3s;
     }
     body input {
@@ -32,6 +32,9 @@
     @media (max-width: 639px) {
         .moive-page {
             @apply grid-cols-1;
+        }
+        .banner-title {
+            max-width: 300px;
         }
     }
 

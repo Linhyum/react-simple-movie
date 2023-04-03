@@ -20,6 +20,7 @@ function App() {
                         path="/movies/:slug"
                         element={<MovieDetailsPage></MovieDetailsPage>}
                     ></Route>
+                    <Route path="*" element={<>404 NOT FOUND</>}></Route>
                 </Route>
             </Routes>
         </Suspense>

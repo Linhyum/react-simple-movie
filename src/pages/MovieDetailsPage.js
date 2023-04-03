@@ -11,6 +11,7 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 const MovieDetailsPage = () => {
     const { slug } = useParams();
     const { data } = useSWR(getMovieList(slug), fetcher);
+    //https://api.themoviedb.org/3/movie/${slug}api_key=9e4dcf244e30611641c2a44c752a2353
     if (!data) return null;
     return (
         <div className="page-container ">

@@ -6,7 +6,6 @@ import { fetcher, getImg, getMovieList } from "../../config";
 import { useNavigate } from "react-router-dom";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
-import LoadingSkeleton from "../LoadingSkeleton";
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 const Banner = () => {
     const { data, isLoading } = useSWR(getMovieList("upcoming"), fetcher);
@@ -19,12 +18,6 @@ const Banner = () => {
                 pagination={{ clickable: true }}
                 slidesPerView={1}
             >
-                {/* {!isLoading && (
-                    <div className="w-full h-full">
-                        <LoadingSkeleton height="100%"></LoadingSkeleton>
-                    </div>
-                )} */}
-
                 {!isLoading &&
                     banners.length > 0 &&
                     banners.map((item) => (
@@ -50,18 +43,7 @@ const BannerItem = ({ info }) => {
                 className="w-full h-full object-cover rounded-lg"
             />
             <div className="absolute left-5 bottom-5 w-full ">
-                <h2 className="font-bold text-3xl mb-5">{info.title}</h2>
-                <div className="flex items-center gap-x-3 mb-8">
-                    <span className="cursor-pointer py-2 px-4 border border-white rounded-md">
-                        Adventure
-                    </span>
-                    <span className="cursor-pointer py-2 px-4 border border-white rounded-md">
-                        Adventure
-                    </span>
-                    <span className="cursor-pointer py-2 px-4 border border-white rounded-md">
-                        Adventure
-                    </span>
-                </div>
+                <h2 className="banner-title font-bold text-3xl mb-5">{info.title}</h2>
                 <button
                     onClick={() => navigate(`/movies/${info.id}`)}
                     className="py-3 flex items-center justify-center gap-x-3 px-6 rounded-lg bg-primary text-xl  font-bold"
