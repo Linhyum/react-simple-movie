@@ -16,9 +16,9 @@ const MovieDetailsPage = () => {
     return (
         <div className="page-container ">
             <div className="w-full h-[600px] relative">
-                <div className="overlay absolute inset-0 bg-black bg-opacity-25"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-25 overlay"></div>
                 <div
-                    className="w-full h-full bg-cover bg-no-repeat"
+                    className="w-full h-full bg-no-repeat bg-cover"
                     style={{
                         backgroundImage: `url(https://image.tmdb.org/t/p/original${data.backdrop_path})`,
                     }}
@@ -27,16 +27,16 @@ const MovieDetailsPage = () => {
             <div className="w-full max-w-[800px] mx-auto h-[400px] relative -mt-[200px] z-10">
                 <img
                     src={`https://image.tmdb.org/t/p/original${data.poster_path}`}
-                    className="w-full h-full object-cover rounded-3xl"
+                    className="object-cover w-full h-full rounded-3xl"
                     alt=""
                 />
             </div>
-            <h1 className="text-center text-4xl font-bold my-10">{data.title}</h1>
+            <h1 className="my-10 text-4xl font-bold text-center">{data.title}</h1>
             {data.genres.length > 0 && (
                 <div className="flex items-center justify-center mx-auto w-full max-w-[800px] flex-wrap gap-8 mb-10">
                     {data.genres.map((item) => (
                         <span
-                            className="px-10 hover:bg-primary hover:text-white transition-all py-3 text-xl bg-transparent border border-primary text-primary rounded-full cursor-pointer"
+                            className="px-10 py-3 text-xl transition-all bg-transparent border rounded-full cursor-pointer hover:bg-primary hover:text-white border-primary text-primary"
                             key={item.id}
                         >
                             {item.name}
@@ -63,20 +63,20 @@ function MovieMeta({ type = "/videos" }) {
         const { cast } = data;
         if (!cast || cast.length <= 0) return null;
         return (
-            <div className="mb-20 text-white">
-                <h2 className="text-center text-3xl font-bold mb-10">Casts</h2>
-                <div className="grid moive-page sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
+            <div className="mb-20">
+                <h2 className="mb-10 text-3xl font-bold text-center">Casts</h2>
+                <div className="grid gap-5 moive-page sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                     {cast.slice(0, 4).map((item) => (
                         <div
                             key={item.id}
-                            className="cast-item relative group overflow-hidden rounded-lg"
+                            className="relative overflow-hidden rounded-lg cast-item group"
                         >
                             <img
                                 className="w-full h-[350px] object-cover group-hover:scale-125 transition-all"
                                 src={getImg(item.profile_path)}
                                 alt=""
                             />
-                            <h3 className="absolute w-full text-center bottom-5 text-2xl group-hover:text-primary transition-all font-semibold">
+                            <h3 className="absolute w-full text-2xl font-semibold text-center text-white transition-all bottom-5 group-hover:text-primary">
                                 {item.name}
                             </h3>
                         </div>
@@ -90,7 +90,7 @@ function MovieMeta({ type = "/videos" }) {
         if (!results || results.length <= 0) return null;
         return (
             <div className="mb-20">
-                <h2 className="font-bold text-3xl mb-5">Trailers:</h2>
+                <h2 className="mb-5 text-3xl font-bold">Trailers:</h2>
                 <div className="aspect-video w-full max-w-[800px] mx-auto">
                     <iframe
                         width="768"
@@ -100,7 +100,7 @@ function MovieMeta({ type = "/videos" }) {
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
-                        className="w-full h-full object-fill"
+                        className="object-fill w-full h-full"
                     ></iframe>
                 </div>
             </div>
@@ -110,8 +110,8 @@ function MovieMeta({ type = "/videos" }) {
         const { results } = data;
         if (!results || results.length <= 0) return null;
         return (
-            <div className="movie-list mb-20">
-                <h2 className="text-3xl font-bold mb-10">Similar movies:</h2>
+            <div className="mb-20 movie-list">
+                <h2 className="mb-10 text-3xl font-bold">Similar movies:</h2>
                 <div className="movie-list">
                     <Swiper
                         grabCursor={"true"}
