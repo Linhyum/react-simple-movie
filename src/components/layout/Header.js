@@ -17,7 +17,7 @@ const Header = () => {
     }
     return (
         <>
-            <header className="header text-xl font-semibold flex items-center justify-center gap-x-10  py-10 mb-5">
+            <header className="flex items-center justify-center py-10 mb-5 text-xl font-semibold header gap-x-10">
                 <NavLink to={"/"} className={active}>
                     Home
                 </NavLink>
@@ -26,12 +26,12 @@ const Header = () => {
                 </NavLink>
             </header>
             <button
-                className="fixed z-50 bottom-20 right-5  w-12 h-12 rounded-full bg-primary text-2xl"
+                className="fixed z-50 w-12 h-12 text-2xl transition-all rounded-full bottom-20 right-5 bg-primary"
                 onClick={handleClick}
             >
-                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-angle-up"></i>
             </button>
-            <div className="fixed bottom-20 left-5 z-50">
+            <div className="fixed z-50 transition-all bottom-20 left-5">
                 <div
                     className={`relative transition-all duration-300 w-20 h-9 flex items-center cursor-pointer rounded-full ${
                         dark ? "bg-primary" : "bg-slate-400"

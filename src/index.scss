@@ -16,6 +16,11 @@
         @apply text-white;
     }
 
+    body.dark .movie-card,
+    body.dark .input-search {
+        @apply bg-slate-800 text-white transition-all;
+    }
+
     .pagination {
         display: flex;
         align-items: center;

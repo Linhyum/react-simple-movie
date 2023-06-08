@@ -44,12 +44,12 @@ const MoviePage = () => {
         <div className="page-container ">
             <form
                 onSubmit={(e) => e.preventDefault()}
-                className="flex mb-10 rounded-lg overflow-hidden"
+                className="flex mb-10 overflow-hidden rounded-lg"
             >
                 <div className="flex-1">
                     <input
                         type="text"
-                        className="w-full p-4 bg-slate-800 outline-none "
+                        className="w-full p-4 transition-all bg-gray-200 outline-none text-slate-800 input-search "
                         placeholder="Type here to search..."
                         ref={input}
                     />
@@ -57,7 +57,7 @@ const MoviePage = () => {
                 <button
                     type="submit"
                     onClick={handleFilterChange}
-                    className="py-4 px-5 bg-primary "
+                    className="px-5 py-4 bg-primary "
                 >
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
