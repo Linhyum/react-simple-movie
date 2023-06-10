@@ -1,13 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import Main from "./components/layout/Main";
-// import HomePage from "./pages/HomePage";
-// import MovieDetailsPage from "./pages/MovieDetailsPage";
-// import MoviePage from "./pages/MoviePage";
 import { lazy, Suspense } from "react";
-
 const HomePage = lazy(() => import("./pages/HomePage"));
 const MoviePage = lazy(() => import("./pages/MoviePage"));
 const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage"));
+const Main = lazy(() => import("./components/layout/Main"));
 
 function App() {
     return (

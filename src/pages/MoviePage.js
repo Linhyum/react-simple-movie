@@ -39,7 +39,9 @@ const MoviePage = () => {
         setItemOffset(newOffset);
         setNextPage(e.selected + 1);
     };
-
+    useEffect(() => {
+        document.title = input.current?.value || "Movie app";
+    }, [input.current?.value]);
     return (
         <div className="page-container ">
             <form

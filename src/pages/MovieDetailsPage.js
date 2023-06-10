@@ -7,11 +7,15 @@ import "swiper/scss";
 import MovieCard from "../components/movie/MovieCard";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
+import { useEffect } from "react";
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 const MovieDetailsPage = () => {
     const { slug } = useParams();
     const { data } = useSWR(getMovieList(slug), fetcher);
     //https://api.themoviedb.org/3/movie/${slug}api_key=9e4dcf244e30611641c2a44c752a2353
+    useEffect(() => {
+        document.title = data?.title || "Movie app";
+    }, [data?.title]);
     if (!data) return null;
     return (
         <div className="page-container ">

@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "../components/banner/Banner";
 import MovieList from "../components/movie/MovieList";
+import { useEffect } from "react";
 
 const HomePage = () => {
     return (
