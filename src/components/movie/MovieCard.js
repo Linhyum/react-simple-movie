@@ -22,7 +22,7 @@ const MovieCard = ({ info }) => {
                 <div className="flex items-center gap-x-2">
                     <span className="opacity-50">{info.vote_average.toFixed(1)}</span>
                     <div className="text-yellow-400">
-                        <i class="fa-solid fa-star"></i>
+                        <i className="fa-solid fa-star"></i>
                     </div>
                 </div>
             </div>

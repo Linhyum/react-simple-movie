@@ -8,7 +8,7 @@ const Button = ({ onclick, title }) => {
         >
             <span>{title}</span>
             <div className="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center">
-                <i class="fa-solid fa-play"></i>
+                <i className="fa-solid fa-play"></i>
             </div>
         </button>
     );

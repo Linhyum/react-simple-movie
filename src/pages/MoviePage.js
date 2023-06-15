@@ -61,7 +61,7 @@ const MoviePage = () => {
                     onClick={handleFilterChange}
                     className="px-5 py-4 bg-primary "
                 >
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i className="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
             {isLoading && (
@@ -83,9 +83,9 @@ const MoviePage = () => {
                     marginPagesDisplayed={1} // Số lượng trang được hiển thị trước và sau trang hiện tại
                     pageRangeDisplayed={1} // Số lượng trang được hiển thị trong phân đoạn paginate
                     breakLabel="..."
-                    nextLabel={<i class="fa-solid fa-chevron-right"></i>}
+                    nextLabel={<i className="fa-solid fa-chevron-right"></i>}
                     onPageChange={handlePageClick}
-                    previousLabel={<i class="fa-solid fa-chevron-left"></i>}
+                    previousLabel={<i className="fa-solid fa-chevron-left"></i>}
                     renderOnZeroPageCount={null}
                     containerClassName={"pagination"} // Class cho container của paginate
                     activeClassName={"active"} // Class cho trang hiện tại

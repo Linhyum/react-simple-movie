@@ -6,7 +6,7 @@ const Header = () => {
     const { storedValue, setValue } = useLocalStorage("dark", false);
 
     const [dark, setDark] = useState(storedValue);
-    const active = ({ isActive }) => isActive && "text-primary";
+    const active = ({ isActive }) => (isActive ? "text-primary" : "");
     const handleClick = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
@@ -29,7 +29,7 @@ const Header = () => {
                 className="fixed z-50 w-12 h-12 text-2xl transition-all rounded-full bottom-20 right-5 bg-primary"
                 onClick={handleClick}
             >
-                <i class="fa-solid fa-angle-up"></i>
+                <i className="fa-solid fa-angle-up"></i>
             </button>
             <div className="fixed z-50 transition-all bottom-20 left-5">
                 <div
